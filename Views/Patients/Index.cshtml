@@ -1,0 +1,111 @@
+@{
+    ViewData["Title"] = "Patients";
+}
+
+@model List<Models.Patient>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Patients</title>
+    <link rel="stylesheet" href="@Url.Content("~/css/patients.css")">
+</head>
+<body class="patients">
+    <div class="container">
+        <h1>Patients List</h1>
+        <input type="text" id="search-input" placeholder="Search by name, CNP, or phone number...">
+        <div class="patients-list">
+            <table id="table1" data-sort-order="asc">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                            <button class="icon-button">
+                                <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#211715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#211715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </th>
+                        <th>
+                            Surname
+                            <button class="icon-button" onclick="sortTable('table1', 1)">
+                                <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#211715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#211715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </th>
+                        <th>
+                            Age
+                            <button class="icon-button" onclick="sortTable('table1', 2)">
+                                <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 18L16 16M16 6L20 10.125M16 6L12 10.125M16 6L16 13" stroke="#211715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 18L12 13.875M8 18L4 13.875M8 18L8 11M8 6V8" stroke="#211715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </th>
+                        <th>Gender</th>
+                        <th>CNP</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Diagnosis</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody id="patient-list">
+                    @foreach (var patient in Model){
+                        <tr>
+                            <td>@patient.Name</td>
+                            <td>@patient.Surname</td>
+                            <td>@patient.Age</td>
+                            <td>@patient.Gender</td>
+                            <td>@patient.CNP</td>
+                            <td>@patient.Address</td>
+                            <td>@patient.PhoneNumber</td>
+                            <td>@patient.Email</td>
+                            <td>@patient.Diagnosis</td>
+                            <td>
+                                <button onclick="deletePatient(@patient.Id)" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Modal -->
+        @* <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Edit Patient Information</h2>
+                <form id="updateForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+        
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" required>
+        
+                    <label for="phone_number">Phone Number:</label>
+                    <input type="text" id="phone_number" required>
+        
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" required>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+        
+                    <label for="diagnosis">Diagnosis:</label>
+                    <input type="text" id="diagnosis">
+        
+                    <div class="modal-footer">
+                        <button type="submit">Save Changes</button>
+                    </div>
+                </form>
+            </div> *@
+        </div>
+    </div>
+    <script src="@Url.Content("~/js/patients.js")"></script>
+</body>
+</html>

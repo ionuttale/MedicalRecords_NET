@@ -1,0 +1,42 @@
+## Ignore .NET Core build results
+/bin/
+/obj/
+/wwwroot/
+
+## Ignore User-specific files
+.vscode/
+.idea/
+
+## Ignore ASP.NET configuration
+appsettings.json
+appsettings.Development.json
+
+## Ignore publish directories
+publish/
+
+## Ignore NuGet packages
+*.nupkg
+.nuget/
+packages/
+
+## Ignore build output
+*.exe
+*.dll
+*.pdb
+*.bak
+*.swp
+
+## Ignore user-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+## Ignore Mac system files
+.DS_Store
+
+## Ignore Windows Installer files
+Thumbs.db
+
+## Ignore logs and temporary files
+*.log
