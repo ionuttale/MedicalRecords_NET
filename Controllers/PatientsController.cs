@@ -67,12 +67,11 @@ namespace Pharmacy.Controllers
         {
             try
             {
-               _connection.Open();
-               var command = new MySqlCommand("DELETE FROM Patients WHERE Id = @Id", _connection);
-               command.Parameters.AddWithValue("@Id", id);
-               command.ExecuteNonQueryAsync();
+                _connection.Open();
+                var command = new MySqlCommand("DELETE FROM Patients WHERE Id = @Id", _connection);
+                command.Parameters.AddWithValue("@Id", id);
+                command.ExecuteNonQueryAsync();
 
-                // Return Ok to indicate success
                 return Ok();
             }
             catch (Exception ex)
@@ -80,7 +79,7 @@ namespace Pharmacy.Controllers
                 return StatusCode(500, $"Delete error:{ex.Message}");
             }
             finally{
-                _connection.Close();
+                _connection.CloseAsync();
             }
         }
 

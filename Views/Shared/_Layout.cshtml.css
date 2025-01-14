@@ -8,35 +8,46 @@ a.navbar-brand {
 }
 
 a {
-  color: #0077cc;
+  color: #8b9a71; /* Secondary color */
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  color: #faf0e6; /* Dominant color */
+  background-color: #8b9a71; /* Secondary color */
+  border-color: #7b8d60; /* Slightly darker secondary color */
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  color: #faf0e6; /* Dominant color */
+  background-color: #8b9a71; /* Secondary color */
+  border-color: #7b8d60; /* Slightly darker secondary color */
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #8b9a71; /* Secondary color */
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #8b9a71; /* Secondary color */
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .25rem .75rem rgba(139, 154, 113, .5); /* Light secondary color shadow */
 }
 
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
+  background-color: #8b9a71; /* Secondary color */
+  color: #faf0e6; /* Dominant color */
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.accept-policy:hover {
+  background-color: #7b8d60; /* Darker secondary color */
 }
 
 .footer {
@@ -45,4 +56,7 @@ button.accept-policy {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+  background-color: #faf0e6; /* Dominant color */
+  color: #8b9a71; /* Secondary color */
+  border-top: 1px solid #8b9a71; /* Secondary color for footer border */
 }

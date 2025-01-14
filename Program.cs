@@ -35,4 +35,14 @@ app.MapControllerRoute(
     pattern:"{controller=Patients}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+app.MapControllerRoute(
+    name:"medicines",
+    pattern:"{controller=Medicines}/{action=Index}/{id?}")
+    .WithStaticAssets();
+
+app.MapControllerRoute(
+    name:"purchases",
+    pattern:"{controller=Purchases}/{action=Index}/{id?}")
+    .WithStaticAssets();
+
 app.Run();

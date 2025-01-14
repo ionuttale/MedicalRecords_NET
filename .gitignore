@@ -40,3 +40,5 @@ Thumbs.db
 
 ## Ignore logs and temporary files
 *.log
+
+.fake
