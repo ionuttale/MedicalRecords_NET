@@ -1,44 +1,47 @@
 @{
-    ViewData["Title"] = "Edit patient";
+    var errorMessage = ViewBag.ErrorMessage as string;
+    if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-danger">@errorMessage</div>
+    }
+    ViewData["Title"] = "Edit purchases";
 }
 
-@model Models.Patient
+@model Models.Purchase
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Edit Patient</title>
+    <title>Edit Purchase</title>
     <link rel="stylesheet" href="@Url.Content("~/css/patients.css")">
 </head>
-<body class="patients">
+<body class="purchase">
     <div class="container">
-        <h1>Edit Patient Information</h1>
+        <h1>Edit Purchase Information</h1>
 
-        <form id="updateForm" method="post" action="@Url.Action("Edit", "Patients")">
-            <label for="name">Name:</label>
-            <input type="text" id="name" value="@Model.Name" name="name" required>
+        <form id="updateForm" method="post" action="@Url.Action("Edit", "Purchases")">
+            <label for="patient_name">Patient Name:</label>
+            <input type="text" id="patient_name" value="@Model.Patient_Name" name="patient_name" required>
 
-            <label for="surname">Surname:</label>
-            <input type="text" id="surname" value="@Model.Surname" name="surname" required>
+            <label for="patient_cnp">Patient cnp:</label>
+            <input type="text" id="patient_cnp" value="@Model.Patient_CNP" name="patient_cnp" required>
 
-            <label for="phone_number">Phone Number:</label>
-            <input type="text" id="phone_number" value="@Model.PhoneNumber" name="PhoneNumber" required>
+            <label for="medicine_name">Medicine name:</label>
+            <input type="text" id="medicine_name" value="@Model.Medicine_Name" name="medicine_name" required>
 
-            <label for="address">Address:</label>
-            <input type="text" id="address" value="@Model.Address" name="address" required>
+            <label for="producer">Producer:</label>
+            <input type="text" id="producer" value="@Model.Producer" name="producer" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" value="@Model.Email" name="email" required>
+            <label for="sale_date">Sale Date:</label>
+            <input type="datetime-local" id="sale_date" name="SaleDate" value="@Model.SaleDate.ToString("yyyy-MM-ddTHH:mm")" required />
 
-            <label for="diagnosis">Diagnosis:</label>
-            <input type="text" id="diagnosis" value="@Model.Diagnosis" name="diagnosis">
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" value="@Model.Quantity" name="quantity" required>
 
             <div class="form-footer">
                 <button type="submit">Save Changes</button>
             </div>
         </form>
     </div>
-
-    <script src="@Url.Content("~/js/patients.js")"></script>
 </body>
 </html>
