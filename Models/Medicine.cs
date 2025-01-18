@@ -2,7 +2,7 @@ using System;
 using Microsoft.VisualBasic;
 
 namespace Models{
-    class Medicine{
+    public class Medicine{
         public required Int32 Id{get; set;}
         public required string Name{get; set;}
         public required string Producer{get; set;}
