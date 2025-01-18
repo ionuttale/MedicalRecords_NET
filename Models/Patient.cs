@@ -1,7 +1,7 @@
 using System;
 
 namespace Models{
-    class Patient{
+    public class Patient{
         public required int Id {get; set; }
         public required string Name {get; set; }
         public required string Surname{get; set;}
